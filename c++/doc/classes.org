@@ -1,0 +1,24 @@
+* Triangle
+** Has
+   array<Vertex, 3>
+   Program
+   VBO
+** Can
+*** Private
+    bind()
+    unbind()
+*** Public
+    draw()
+
+* Vertex
+** Has
+   Position
+   Color
+
+* Position
+** Is
+   glm::vec4
+
+* Color
+** Is
+   glm::vec4

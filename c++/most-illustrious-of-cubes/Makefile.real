@@ -1,0 +1,40 @@
+LDDEPS=-lglut -lGL -lGLEW -lm
+CXX= g++ -g -std=gnu++11
+CXX_COMPILE=$(CXX) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+CXX_DEPENDENCIES=-Wp,-MD,.deps/$(*F).P
+CXX_LINK=$(CXX) $(CFLAGS) $(LDFLAGS) -L.
+most-illustrious-of-cubes_SOURCES=mioc.cpp lib/shader_utils.cpp
+most-illustrious-of-cubes_OBJ= mioc.o lib/shader_utils.o
+VERSION=1.0
+DISTDIR=$(top)C++ OpenGL Fun-$(VERSION)
+top_builddir = 
+
+DEP_FILES=.deps/main.P .deps/main2.P
+
+DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
+-include $(DEP_FILES)
+
+
+all: most-illustrious-of-cubes
+	make most-illustrious-of-cubes
+
+install-deps:
+	sudo apt-get install libglm-dev mesa-common-dev libglew-dev libgl1-mesa-dev g++
+
+%.o: %.cpp
+	@echo '$(CXX_COMPILE) -c $<'; \
+	$(CXX_COMPILE) $(CXX_DEPENDENCIES) -o $@ -c $<
+
+lib/%.o: lib/%.cpp
+	@echo '$(CXX_COMPILE) -c $<'; \
+	$(CXX_COMPILE) $(CXX_DEPENDENCIES) -o $@ -c $<
+
+most-illustrious-of-cubes: $(most-illustrious-of-cubes_OBJ)
+	$(CXX_LINK) -o $@ $^ $(LDDEPS)
+
+tags: 
+
+
+clean:
+	rm -f *.mod *.o *.obj .deps/*.P .lo lib/*.o
+

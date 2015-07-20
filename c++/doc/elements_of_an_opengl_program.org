@@ -1,0 +1,45 @@
+* Initialize GLUT
+  Call glutInit and glutInit* friends to set up the context version
+  you want, the initial window size, the context mode, etc.
+* Create GLUT window
+* Initialize GLEW
+* Initialize Resources
+** Create Shader Programs
+*** Load Shaders From File
+*** Compile Shaders
+    Get the shader log here and print any errors. (glGetShaderiv)
+*** Create Programs
+*** Attach Shaders
+*** Link Programs
+    Get the link log here and print any errors. (glGetProgramiv)
+** Declare/Define Your Binds (declare uniforms, define attributes, etc.)
+*** Name the Bind
+*** Get the Location
+    glGet{Uniform,Attribute}Location.
+*** If the Bind is an Attribute
+**** Define the Attribute
+**** Generate VBOs for Your Object's Attributes
+**** Bind and Buffer your Attribute into the VBO
+* Set Callbacks
+  glutDisplayFunc, glutIdleFunc and the like
+** Display Callback
+   Updates the screen -- is called ideally 60 times per second.
+*** Setup Clear Colors, Blending and Other Effects
+*** Use Program
+*** Bind VBO to Buffer
+*** Enable Your Attributes
+*** Draw You Objects
+*** Disable your Attributes
+*** Swap Buffers
+** Idle Callback
+   Updates the internel model -- is called after each Display callback.
+*** Get the Current Time Here
+    glutGet(GLUT_ELAPSED_TIME) / 1000.0
+*** Define uniforms
+*** Compose transformation matrices
+*** Use Program
+*** Update Uniforms in Context
+*** call glutPostRedisplay()
+* Call glutMainLoop
+* Cleanup and Exit
+    

@@ -1,0 +1,25 @@
+Hello Chris-chan,
+
+To install the dependencies for this epic demonstration, do
+
+$ make install-deps
+
+This will invoke `sudo apt-get' to install the necessary dependencies.
+They are small libraries, plus a recent version of g++ to compile.
+
+To build the demo, do
+
+$ make
+
+To run the demo do
+
+$ ./most-illustrious-of-cubes
+
+The command
+
+$ make clean
+
+Will clean up the object files for you afterwards.
+
+With L0ve,
+  Matt
