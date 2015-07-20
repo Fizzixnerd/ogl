@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <iostream>
 #include <cassert>
 #include <GL/glew.h>
 #include <GL/freeglut.h>
@@ -14,7 +15,7 @@ static void RenderSceneCB() {
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
-  glDrawArrays(GL_POINTS, 0, 1);
+  glDrawArrays(GL_TRIANGLES, 0, 3);
 
   glDisableVertexAttribArray(0);
 
@@ -26,8 +27,13 @@ static void InitializeGlutCallbacks() {
 }
 
 static void CreateVertexBuffer() {
-  ogl::Vector3f vertices[1];
-  assert(vertices[0][0] == 0.0f);
+  using namespace ogl;
+  
+  Vector3f vertices[3];
+  vertices[0] = make_vector(-1.0f, -1.0f, 0.0f);
+  vertices[1] = make_vector(1.0f, -1.0f, 0.0f);
+  vertices[2] = make_vector(0.0f, 1.0f, 0.0f);
+  std::cout << vertices[0] << vertices[1] << vertices[2] << std::endl;
 
   glGenBuffers(1, &VBO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -45,7 +51,7 @@ int main(int argc, char** argv) {
 
   GLenum res = glewInit();
   if (res != GLEW_OK) {
-    fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
+    std::fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
     return 1;
   }
 

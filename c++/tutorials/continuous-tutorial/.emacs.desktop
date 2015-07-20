@@ -1,0 +1,29 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Jul 20 09:25:09 2015
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/src/opengl/c++/tutorials/continuous-tutorial/" "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp" "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/Makefile"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp"
+  "main.cpp"
+  'c++-mode
+  '(abbrev-mode yas-minor-mode TeX-PDF-mode company-mode hs-minor-mode fic-ext-mode)
+  815
+  '(830 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+

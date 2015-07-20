@@ -8,16 +8,24 @@
 
 namespace ogl {
 
+  template<class T, class... Ts>
+  Vector<T, sizeof...(Ts) + 1> make_vector(T v1, Ts... args) {
+    const std::size_t sz = sizeof...(Ts) + 1;
+    std::array<T, sz> vals = {v1, args...};
+    return Vector<T, sz>{vals};
+  }
+    
+
   template<class T, std::size_t n>
   Vector<T, n>::Vector() : elements(std::array<T, n>()) {
   }
 
   template<class T, std::size_t n>
-  Vector<T, n>::Vector(std::array<T, n> elements_) : elements(elements_) {
+  Vector<T, n>::Vector(std::array<T, n>& elements_) : elements(elements_) {
   }
 
   template<class T, std::size_t n>
-  Vector<T, n>::Vector(Vector<T, n>& v) : elements(v.elements) {
+  Vector<T, n>::Vector(const Vector<T, n>& v) : elements(v.elements) {
   }
 
   template<class T, std::size_t n>
@@ -25,8 +33,14 @@ namespace ogl {
   }
  
   template<class T, std::size_t n>
-  Vector<T, n>& Vector<T, n>::operator =(Vector<T, n> v) {
+  Vector<T, n>& Vector<T, n>::operator =(const Vector<T, n>& v) {
     return Vector<T, n>(v);
+  }
+
+  template<class T, std::size_t n>
+  Vector<T, n>& Vector<T, n>::operator =(Vector<T, n>&& v) {
+    swap(elements, v.elements);
+    return *this;
   }
 
   template<class T, std::size_t n>
@@ -164,5 +178,19 @@ namespace ogl {
       u[i] = scalar * u[i] + v[i];
     }
     return u;
+  }
+
+  template<class T, std::size_t n>
+  std::ostream& operator <<(std::ostream& os, Vector<T, n>& v) {
+    os << "(";
+    for (std::size_t i = 0; i < n; ++i) {
+      os << v[i];
+      if (i == (n - 1)) {
+	break;
+      }
+      os << ", ";
+    }
+    os << ")";
+    return os;
   }
 }

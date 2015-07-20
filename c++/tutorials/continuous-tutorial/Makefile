@@ -21,8 +21,8 @@ YOUR_LDLIBS=-lglut -lGL -lGLEW
 # DON'T TOUCH THIS SHIT #
 #########################
 
-CC=clang-3.6
-CXX=clang++-3.6
+CC=gcc
+CXX=g++
 
 CFLAGS=$(YOUR_CFLAGS)
 CXXFLAGS=$(YOUR_CXXFLAGS)

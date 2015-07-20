@@ -2,6 +2,7 @@
 
 #include <cstdlib>
 #include <array>
+#include <iostream>
 
 namespace ogl {
 
@@ -11,13 +12,17 @@ namespace ogl {
 
   public:
     Vector();
-    explicit Vector(std::array<T, n> elements_);
-    explicit Vector(Vector<T, n>& v);
+    explicit Vector(std::array<T, n>& elements_);
+    Vector(const Vector<T, n>& v);
     explicit Vector(Vector<T, n>&& v);
     ~Vector() noexcept = default;
-    Vector<T, n>& operator =(Vector<T, n> v);
+    Vector<T, n>& operator =(const Vector<T, n>& v);
+    Vector<T, n>& operator =(Vector<T, n>&& v);
     T& operator [](std::size_t i);
   };
+
+  template<class T, class... Ts>
+  Vector<T, sizeof...(Ts) + 1> make_vector(T v1, Ts... args);
 
   template<class T, std::size_t n>
   Vector<T, n> operator +(const Vector<T, n>& lhs, const Vector<T, n>& rhs);
@@ -69,6 +74,9 @@ namespace ogl {
 
   template<class T, std::size_t n>
   Vector<T, n>& multiply_add_assign(Vector<T, n>& u, T scalar, const Vector<T, n>& v);
+
+  template<class T, std::size_t n>
+  std::ostream& operator <<(std::ostream& os, const Vector<T, n>& v);
   
 }
 
