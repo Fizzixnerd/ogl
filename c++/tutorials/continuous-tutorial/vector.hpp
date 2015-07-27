@@ -14,7 +14,7 @@ namespace ogl {
     Vector();
     explicit Vector(std::array<T, n>& elements_);
     Vector(const Vector<T, n>& v);
-    explicit Vector(Vector<T, n>&& v);
+    Vector(Vector<T, n>&& v);
     ~Vector() noexcept = default;
     Vector<T, n>& operator =(const Vector<T, n>& v);
     Vector<T, n>& operator =(Vector<T, n>&& v);

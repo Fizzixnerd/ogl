@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/main.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp",
+  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp"
+},
+{
+  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/scratch.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp",
+  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp"
+},
+{
+  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/shader.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp",
+  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp"
+},
+{
+  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/shaderprogram.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp",
+  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp"
+}
+]
