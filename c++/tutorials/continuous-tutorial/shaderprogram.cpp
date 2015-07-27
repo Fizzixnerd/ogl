@@ -1,4 +1,9 @@
+#include <memory>
+#include <iostream>
+
 #include "shaderprogram.hpp"
+#include "shader.hpp"
+#include "make_unique.tpp"
 
 namespace ogl {
 
@@ -11,21 +16,10 @@ namespace ogl {
     }
   }
 
-  template<> void ShaderProgram::attach(Shader<GL_VERTEX_SHADER> s) {
-    glAttachShader(m_handle, s.handle());
-    m_vertex_shaders.push_back(s);
+  ShaderProgram::~ShaderProgram() noexcept {
+    glDeleteProgram(m_handle);
+    std::cerr << "Killed the program." << std::endl;
   }
-
-  template<> void ShaderProgram::attach(Shader<GL_FRAGMENT_SHADER> s) {
-    glAttachShader(m_handle, s.handle());
-    m_fragment_shaders.push_back(s);
-  }
-
-  template<> void ShaderProgram::attach(Shader<GL_GEOMETRY_SHADER> s) {
-    glAttachShader(m_handle, s.handle());
-    m_geometry_shaders.push_back(s);
-  }
-
 
   ShaderProgram::operator bool() const noexcept {
     return m_good;
@@ -62,6 +56,10 @@ namespace ogl {
 
   void ShaderProgram::use() const noexcept {
     glUseProgram(m_handle);
+  }
+
+  void initialize_shaderprogram(std::unique_ptr<ShaderProgram>& sp) {
+    return;
   }
 
   ShaderProgramCreationException::ShaderProgramCreationException() : std::runtime_error("") {

@@ -24,11 +24,19 @@ shader.hpp
 shaderprogram.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+memory
+-
+
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/oglmath.hpp
 vector.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 vector.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.tpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp
+shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 GL/glew.h
@@ -41,8 +49,16 @@ stdexcept
 -
 string
 -
+vector
+-
+memory
+-
+make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 shader.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
+shaderprogram.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
 exception
@@ -55,20 +71,28 @@ sstream
 -
 shader.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
-
+shaderprogram.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
-GL/glew.h
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp
+memory
 -
-GL/freeglut.h
+iostream
 -
-vector
--
-exception
--
-stdexcept
--
+shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 shader.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
+shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 cstdlib

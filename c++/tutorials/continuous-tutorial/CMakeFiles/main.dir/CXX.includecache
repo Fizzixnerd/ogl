@@ -24,11 +24,25 @@ shader.hpp
 shaderprogram.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+memory
+-
+
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/oglmath.hpp
 vector.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 vector.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.tpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp
+iostream
+-
+cstdlib
+-
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp
+shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 GL/glew.h
@@ -40,6 +54,8 @@ exception
 stdexcept
 -
 string
+-
+vector
 -
 shader.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
@@ -55,6 +71,18 @@ sstream
 -
 shader.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp
+memory
+-
+shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 GL/glew.h
@@ -67,8 +95,20 @@ exception
 -
 stdexcept
 -
+memory
+-
 shader.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+shaderprogram.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
+shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 cstdlib

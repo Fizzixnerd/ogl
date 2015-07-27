@@ -1,14 +1,10 @@
-#pragma once
-
 #include <exception>
 #include <string>
 #include <fstream>
 #include <sstream>
 
-//debug 
-//#include <iostream>
-
 #include "shader.hpp"
+#include "shaderprogram.hpp"
 
 namespace ogl {
 
@@ -57,11 +53,19 @@ namespace ogl {
     
     compile(shader_text);
     if (not m_good) {
-      char infolog[1024];
+      GLchar infolog[1024];
       glGetShaderInfoLog(m_handle, 1024, NULL, infolog);
       m_infolog = infolog;
       return;
     }
+  }
+
+  template<GLenum ShaderType>
+  Shader<ShaderType>::~Shader() noexcept {
+    for (auto& sp : m_attached_shaderprograms) {
+      glDetachShader(sp->m_handle, m_handle);
+    }
+    glDeleteShader(m_handle);
   }
 
   template<GLenum ShaderType>

@@ -49,7 +49,7 @@ static void CreateVertexBuffer() {
 }
 
 template<GLenum ShaderType>
-void check_shader(ogl::Shader<ShaderType> s) {
+void check_shader(ogl::Shader<ShaderType>& s) {
   if (s) {
     std::cerr << "good!" << std::endl;
   } else {
@@ -58,12 +58,12 @@ void check_shader(ogl::Shader<ShaderType> s) {
   }
 }
 
-void check_program(ogl::ShaderProgram sp) {
+void check_program(std::unique_ptr<ogl::ShaderProgram>& sp) {
   if (sp) {
     std::cerr << "good!" << std::endl;
   } else {
     std::cerr << "bad!!" << std::endl;
-    std::cerr << sp.infolog() << std::endl;
+    std::cerr << sp->infolog() << std::endl;
   }
 }
 
@@ -85,20 +85,17 @@ int main(int argc, char** argv) {
 
   std::printf("GL version %s\n", glGetString(GL_VERSION));
 
-  glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+  glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
   CreateVertexBuffer();
 
   auto vertex_shader = Shader<GL_VERTEX_SHADER>("shader.vs");
   auto fragment_shader = Shader<GL_FRAGMENT_SHADER>("shader.fs");
-  auto shader_program = ShaderProgram();
   check_shader(vertex_shader);
   check_shader(fragment_shader);
-  shader_program.attach(vertex_shader);
-  shader_program.attach(fragment_shader);
-  shader_program.link();
+  auto shader_program = make_shaderprogram(vertex_shader, fragment_shader);
   check_program(shader_program);
-  shader_program.use();
+  shader_program->use();
 
   glutMainLoop();
 
