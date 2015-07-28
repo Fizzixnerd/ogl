@@ -6,23 +6,51 @@
 
 #IncludeRegexTransform: 
 
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
+GL/glew.h
+-
+GL/freeglut.h
+-
+cstdlib
+-
+buffer.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.tpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.tpp
+buffer.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.hpp
+GL/glew.h
+-
+GL/freeglut.h
+-
+functional
+-
+string
+-
+
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp
+GL/glew.h
+-
+GL/freeglut.h
+-
+cmath
+-
 cstdio
 -
 iostream
 -
 cassert
 -
-GL/glew.h
--
-GL/freeglut.h
--
 oglmath.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/oglmath.hpp
 shader.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
-shaderprogram.hpp
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+context.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.hpp
+buffer.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 memory
@@ -33,10 +61,6 @@ vector.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 vector.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.tpp
-
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp
-shader.hpp
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 GL/glew.h
@@ -55,6 +79,8 @@ memory
 -
 make_unique.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+uniform.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
 shader.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
 shaderprogram.tpp
@@ -74,25 +100,19 @@ shader.hpp
 shaderprogram.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp
-memory
--
-iostream
--
-shaderprogram.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
 shader.hpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 make_unique.tpp
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
-
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
-shaderprogram.hpp
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
-make_unique.tpp
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
+GL/glew.h
+-
+GL/freeglut.h
+-
 
 /home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 cstdlib

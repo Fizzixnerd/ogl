@@ -1,51 +1,36 @@
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
+#include <cmath>
 #include <cstdio>
 #include <iostream>
 #include <cassert>
-#include <GL/glew.h>
-#include <GL/freeglut.h>
 
 #include "oglmath.hpp"
 #include "shader.hpp"
-#include "shaderprogram.hpp"
+#include "context.hpp"
+#include "buffer.hpp"
 
 GLuint VBO;
+GLuint gScaleLocation;
 
 /** This function renders the scene properly and is overall a good
     thing to be having yes yes. */
 static void RenderSceneCB() {
   glClear(GL_COLOR_BUFFER_BIT);
 
+  static float scale = 0.0f;
+  scale += 0.001f;
+  glUniform1f(gScaleLocation, std::sin(scale));
+  assert(gScaleLocation != 0xFFFFFFFF);
+
   glEnableVertexAttribArray(0);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
   glDrawArrays(GL_TRIANGLES, 0, 3);
-
   glDisableVertexAttribArray(0);
 
   glutSwapBuffers();
-}
-
-static void InitializeGlutCallbacks() {
-  glutDisplayFunc(RenderSceneCB);
-}
-
-static void CreateVertexBuffer() {
-  using namespace ogl;
-  
-  //Vector3f vertices[3];
-  //vertices[0] = make_vector(-1.0f, -1.0f, 0.0f);
-  //vertices[1] = make_vector(1.0f, -1.0f, 0.0f);
-  //vertices[2] = make_vector(0.0f, 1.0f, 0.0f);
-  //std::cerr << vertices[0] << vertices[1] << vertices[2] << std::endl;
-
-  GLfloat vertices[9] = {-1.0f, -1.0f, 0.0f,
-			 1.0f, -1.0f, 0.0f,
-  			 0.0f, 1.0f, 0.0f};
-
-  glGenBuffers(1, &VBO);
-  glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 }
 
 template<GLenum ShaderType>
@@ -59,23 +44,23 @@ void check_shader(ogl::Shader<ShaderType>& s) {
 }
 
 void check_program(std::unique_ptr<ogl::ShaderProgram>& sp) {
-  if (sp) {
+  if (sp && *sp) {
     std::cerr << "good!" << std::endl;
   } else {
     std::cerr << "bad!!" << std::endl;
-    std::cerr << sp->infolog() << std::endl;
+    std::cerr << (sp ? sp->infolog() : "ShaderProgram is nullptr.") << std::endl;
   }
 }
 
 int main(int argc, char** argv) {
   using namespace ogl;
-  glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-  glutInitWindowSize(1024, 768);
-  glutInitWindowPosition(100, 100);
-  glutCreateWindow("Tutorial 04");
-
-  InitializeGlutCallbacks();
+  auto context = Context(argc, argv);
+  context.set_init_display_mode(GLUT_DOUBLE | GLUT_RGBA);
+  context.set_init_window_size(1024, 768);
+  context.set_init_window_position(100, 100);
+  context.create_window("Tutorial 05");
+  context.set_display_func(RenderSceneCB);
+  context.set_idle_func(RenderSceneCB);
 
   GLenum res = glewInit();
   if (res != GLEW_OK) {
@@ -87,7 +72,14 @@ int main(int argc, char** argv) {
 
   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-  CreateVertexBuffer();
+  auto vertex_buffer = Buffer<GL_ARRAY_BUFFER, GL_STATIC_DRAW>();
+  Vector3f vertices[3];
+  vertices[0] = make_vector(-1.0f, -1.0f, 0.0f);
+  vertices[1] = make_vector(1.0f, -1.0f, 0.0f);
+  vertices[2] = make_vector(0.0f, 1.0f, 0.0f);
+  vertex_buffer.buffer(sizeof(vertices), vertices);
+
+  VBO = vertex_buffer.handle();
 
   auto vertex_shader = Shader<GL_VERTEX_SHADER>("shader.vs");
   auto fragment_shader = Shader<GL_FRAGMENT_SHADER>("shader.fs");
@@ -96,8 +88,8 @@ int main(int argc, char** argv) {
   auto shader_program = make_shaderprogram(vertex_shader, fragment_shader);
   check_program(shader_program);
   shader_program->use();
-
-  glutMainLoop();
+  
+  context.main();
 
   return 0;
 }

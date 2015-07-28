@@ -114,6 +114,30 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+context.o: context.cpp.o
+.PHONY : context.o
+
+# target to build an object file
+context.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.o
+.PHONY : context.cpp.o
+
+context.i: context.cpp.i
+.PHONY : context.i
+
+# target to preprocess a source file
+context.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.i
+.PHONY : context.cpp.i
+
+context.s: context.cpp.s
+.PHONY : context.s
+
+# target to generate assembly for a file
+context.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.s
+.PHONY : context.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -219,6 +243,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... rebuild_cache"
+	@echo "... context.o"
+	@echo "... context.i"
+	@echo "... context.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

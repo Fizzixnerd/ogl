@@ -4,6 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
+  "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp" "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/main.dir/context.cpp.o"
   "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp" "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/main.dir/main.cpp.o"
   "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp" "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/main.dir/scratch.cpp.o"
   "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp" "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/main.dir/shader.cpp.o"

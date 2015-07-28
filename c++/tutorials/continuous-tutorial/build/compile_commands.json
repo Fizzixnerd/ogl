@@ -18,5 +18,10 @@
   "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
   "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/shaderprogram.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp",
   "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp"
+},
+{
+  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/context.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp",
+  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp"
 }
 ]

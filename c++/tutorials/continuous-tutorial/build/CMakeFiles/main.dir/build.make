@@ -144,12 +144,36 @@ CMakeFiles/main.dir/shaderprogram.cpp.o.provides: CMakeFiles/main.dir/shaderprog
 
 CMakeFiles/main.dir/shaderprogram.cpp.o.provides.build: CMakeFiles/main.dir/shaderprogram.cpp.o
 
+CMakeFiles/main.dir/context.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/context.cpp.o: ../context.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.dir/context.cpp.o"
+	/home/matt/.system/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/context.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp
+
+CMakeFiles/main.dir/context.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/context.cpp.i"
+	/home/matt/.system/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp > CMakeFiles/main.dir/context.cpp.i
+
+CMakeFiles/main.dir/context.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/context.cpp.s"
+	/home/matt/.system/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp -o CMakeFiles/main.dir/context.cpp.s
+
+CMakeFiles/main.dir/context.cpp.o.requires:
+.PHONY : CMakeFiles/main.dir/context.cpp.o.requires
+
+CMakeFiles/main.dir/context.cpp.o.provides: CMakeFiles/main.dir/context.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/context.cpp.o.provides
+
+CMakeFiles/main.dir/context.cpp.o.provides.build: CMakeFiles/main.dir/context.cpp.o
+
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/main.cpp.o" \
 "CMakeFiles/main.dir/scratch.cpp.o" \
 "CMakeFiles/main.dir/shader.cpp.o" \
-"CMakeFiles/main.dir/shaderprogram.cpp.o"
+"CMakeFiles/main.dir/shaderprogram.cpp.o" \
+"CMakeFiles/main.dir/context.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
@@ -158,6 +182,7 @@ main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/scratch.cpp.o
 main: CMakeFiles/main.dir/shader.cpp.o
 main: CMakeFiles/main.dir/shaderprogram.cpp.o
+main: CMakeFiles/main.dir/context.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable main"
@@ -171,6 +196,7 @@ CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/scratch.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/shader.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/shaderprogram.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/context.cpp.o.requires
 .PHONY : CMakeFiles/main.dir/requires
 
 CMakeFiles/main.dir/clean:

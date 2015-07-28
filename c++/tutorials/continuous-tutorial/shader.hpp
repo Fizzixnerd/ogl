@@ -10,6 +10,7 @@
 #include <memory>
 
 #include "make_unique.tpp"
+#include "uniform.hpp"
 
 namespace ogl {
 
@@ -19,6 +20,17 @@ namespace ogl {
   class ShaderProgram {
     template<GLenum ShaderType>
     friend class Shader;
+    template<class T> friend
+    std::unique_ptr<T> mem::make_unique();
+    template<GLenum... ShaderTypes> friend
+    std::unique_ptr<ShaderProgram> make_shaderprogram(Shader<ShaderTypes>&... shaders);
+    template<GLenum ShaderType, GLenum... ShaderTypes> friend
+    void initialize_shaderprogram(std::unique_ptr<ShaderProgram>& sp,
+				  Shader<ShaderType>& shader,
+				  Shader<ShaderTypes>&... shaders);
+    friend
+    void initialize_shaderprogram(std::unique_ptr<ShaderProgram>& sp);
+
     
     GLuint m_handle;
     bool m_good;
@@ -34,16 +46,7 @@ namespace ogl {
     void use() const noexcept;
     operator bool() const noexcept;
     const std::string& infolog() const noexcept;
-    template<class T> friend
-    std::unique_ptr<T> mem::make_unique();
-    template<GLenum... ShaderTypes> friend
-    std::unique_ptr<ShaderProgram> make_shaderprogram(Shader<ShaderTypes>&... shaders);
-    template<GLenum ShaderType, GLenum... ShaderTypes> friend
-    void initialize_shaderprogram(std::unique_ptr<ShaderProgram>& sp,
-				  Shader<ShaderType>& shader,
-				  Shader<ShaderTypes>&... shaders);
-    friend
-    void initialize_shaderprogram(std::unique_ptr<ShaderProgram>& sp);
+    Uniform1f get_uniform_location(const std::string& name) const noexcept;
   };
   
   class ShaderProgramCreationException : public std::runtime_error {

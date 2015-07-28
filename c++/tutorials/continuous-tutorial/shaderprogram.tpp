@@ -1,4 +1,4 @@
-#include "shaderprogram.hpp"
+#include "shader.hpp"
 #include "make_unique.tpp"
 
 namespace ogl {
