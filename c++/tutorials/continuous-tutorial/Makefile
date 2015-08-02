@@ -42,17 +42,17 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial
+CMAKE_SOURCE_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial
+CMAKE_BINARY_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	@echo "Running CMake cache editor..."
 	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
@@ -62,7 +62,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	@echo "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles /home/matt/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

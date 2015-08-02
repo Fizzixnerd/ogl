@@ -6,32 +6,16 @@
 #include <iostream>
 #include <cassert>
 
-#include "oglmath.hpp"
+#include "vector.hpp"
+#include "matrix.hpp"
 #include "shader.hpp"
 #include "context.hpp"
 #include "buffer.hpp"
-
-GLuint VBO;
-GLuint gScaleLocation;
+#include "uniform.hpp"
+#include "attribute.hpp"
 
 /** This function renders the scene properly and is overall a good
     thing to be having yes yes. */
-static void RenderSceneCB() {
-  glClear(GL_COLOR_BUFFER_BIT);
-
-  static float scale = 0.0f;
-  scale += 0.001f;
-  glUniform1f(gScaleLocation, std::sin(scale));
-  assert(gScaleLocation != 0xFFFFFFFF);
-
-  glEnableVertexAttribArray(0);
-  glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-  glDrawArrays(GL_TRIANGLES, 0, 3);
-  glDisableVertexAttribArray(0);
-
-  glutSwapBuffers();
-}
 
 template<GLenum ShaderType>
 void check_shader(ogl::Shader<ShaderType>& s) {
@@ -54,21 +38,23 @@ void check_program(std::unique_ptr<ogl::ShaderProgram>& sp) {
 
 int main(int argc, char** argv) {
   using namespace ogl;
-  auto context = Context(argc, argv);
-  context.set_init_display_mode(GLUT_DOUBLE | GLUT_RGBA);
-  context.set_init_window_size(1024, 768);
-  context.set_init_window_position(100, 100);
-  context.create_window("Tutorial 05");
-  context.set_display_func(RenderSceneCB);
-  context.set_idle_func(RenderSceneCB);
-
-  GLenum res = glewInit();
-  if (res != GLEW_OK) {
-    std::fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
+  
+  auto status = glfwInit();
+  if (!status) {
     return 1;
   }
 
-  std::printf("GL version %s\n", glGetString(GL_VERSION));
+  auto context = Context(1024, 768, "Tutorial 05", nullptr, nullptr);
+  if (!context) {
+    return 3;
+  }
+  context.use();
+  
+  GLenum res = glewInit();
+  if (res != GLEW_OK) {
+    std::fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
+    return 2;
+  }
 
   glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
@@ -79,8 +65,6 @@ int main(int argc, char** argv) {
   vertices[2] = make_vector(0.0f, 1.0f, 0.0f);
   vertex_buffer.buffer(sizeof(vertices), vertices);
 
-  VBO = vertex_buffer.handle();
-
   auto vertex_shader = Shader<GL_VERTEX_SHADER>("shader.vs");
   auto fragment_shader = Shader<GL_FRAGMENT_SHADER>("shader.fs");
   check_shader(vertex_shader);
@@ -88,8 +72,27 @@ int main(int argc, char** argv) {
   auto shader_program = make_shaderprogram(vertex_shader, fragment_shader);
   check_program(shader_program);
   shader_program->use();
-  
-  context.main();
 
+  std::printf("GL version %s\n", glGetString(GL_VERSION));
+
+  auto gWorld = shader_program->get_uniform<Matrix<float, 4, 4> >("gWorld");
+  auto gScale = 0.0f;
+  int time_scale = 1;
+  while (not context.should_close()) {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    gScale += 0.001f * time_scale;
+
+    glEnableVertexAttribArray(0);
+    vertex_buffer.bind();
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDisableVertexAttribArray(0);
+
+    context.swap_buffers();
+    glfwPollEvents();
+  }
+
+  glfwTerminate();
   return 0;
 }

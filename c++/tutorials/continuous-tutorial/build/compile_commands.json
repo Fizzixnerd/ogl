@@ -1,27 +1,37 @@
 [
 {
-  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
-  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/main.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp",
-  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp"
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/main.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/main.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/main.cpp"
 },
 {
-  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
-  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/scratch.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp",
-  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp"
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/scratch.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp"
 },
 {
-  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
-  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/shader.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp",
-  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp"
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/shader.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.cpp"
 },
 {
-  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
-  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/shaderprogram.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp",
-  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp"
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/shaderprogram.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.cpp"
 },
 {
-  "directory": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build",
-  "command": "/home/matt/.system/bin/c++    -Wall -std=c++11 -ggdb   -o CMakeFiles/main.dir/context.cpp.o -c /home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp",
-  "file": "/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.cpp"
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/context.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/context.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/context.cpp"
+},
+{
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/uniform.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.cpp"
+},
+{
+  "directory": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build",
+  "command": "clang++-3.6    -Wall -std=c++11 -I/usr/include/libdrm    -o CMakeFiles/main.dir/matrix.cpp.o -c /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.cpp",
+  "file": "/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.cpp"
 }
 ]

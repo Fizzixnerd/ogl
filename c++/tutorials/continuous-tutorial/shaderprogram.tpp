@@ -1,3 +1,7 @@
+#pragma once
+
+#include <memory>
+
 #include "shader.hpp"
 #include "make_unique.tpp"
 
@@ -19,7 +23,7 @@ namespace ogl {
       return nullptr;
     }
     return sp;
- }
+  }
 
   template<GLenum ShaderType, GLenum... ShaderTypes>
   void initialize_shaderprogram(std::unique_ptr<ShaderProgram>& sp,
@@ -28,5 +32,10 @@ namespace ogl {
     sp->attach(shader);
     initialize_shaderprogram(sp, shaders...);
   }
-}
 
+  template<class T>
+  Uniform<T> ShaderProgram::get_uniform(const std::string& name) {
+    auto handle = glGetUniformLocation(m_handle, name.c_str());
+    return Uniform<T>(handle);
+  }
+}

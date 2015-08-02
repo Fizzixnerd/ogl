@@ -53,6 +53,10 @@ namespace ogl {
     return m_infolog;
   }
 
+  GLuint ShaderProgram::handle() {
+    return m_handle;
+  }
+
   void ShaderProgram::use() const noexcept {
     glUseProgram(m_handle);
   }

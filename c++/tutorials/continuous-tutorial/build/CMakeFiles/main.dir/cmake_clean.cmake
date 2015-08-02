@@ -4,6 +4,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/main.dir/shader.cpp.o"
   "CMakeFiles/main.dir/shaderprogram.cpp.o"
   "CMakeFiles/main.dir/context.cpp.o"
+  "CMakeFiles/main.dir/uniform.cpp.o"
+  "CMakeFiles/main.dir/matrix.cpp.o"
   "main.pdb"
   "main"
 )

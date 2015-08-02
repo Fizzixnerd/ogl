@@ -39,13 +39,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial
+CMAKE_SOURCE_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build
+CMAKE_BINARY_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,6 +162,30 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+matrix.o: matrix.cpp.o
+.PHONY : matrix.o
+
+# target to build an object file
+matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/matrix.cpp.o
+.PHONY : matrix.cpp.o
+
+matrix.i: matrix.cpp.i
+.PHONY : matrix.i
+
+# target to preprocess a source file
+matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/matrix.cpp.i
+.PHONY : matrix.cpp.i
+
+matrix.s: matrix.cpp.s
+.PHONY : matrix.s
+
+# target to generate assembly for a file
+matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/matrix.cpp.s
+.PHONY : matrix.cpp.s
+
 scratch.o: scratch.cpp.o
 .PHONY : scratch.o
 
@@ -234,6 +258,30 @@ shaderprogram.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shaderprogram.cpp.s
 .PHONY : shaderprogram.cpp.s
 
+uniform.o: uniform.cpp.o
+.PHONY : uniform.o
+
+# target to build an object file
+uniform.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/uniform.cpp.o
+.PHONY : uniform.cpp.o
+
+uniform.i: uniform.cpp.i
+.PHONY : uniform.i
+
+# target to preprocess a source file
+uniform.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/uniform.cpp.i
+.PHONY : uniform.cpp.i
+
+uniform.s: uniform.cpp.s
+.PHONY : uniform.s
+
+# target to generate assembly for a file
+uniform.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/uniform.cpp.s
+.PHONY : uniform.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,6 +297,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... matrix.o"
+	@echo "... matrix.i"
+	@echo "... matrix.s"
 	@echo "... scratch.o"
 	@echo "... scratch.i"
 	@echo "... scratch.s"
@@ -258,6 +309,9 @@ help:
 	@echo "... shaderprogram.o"
 	@echo "... shaderprogram.i"
 	@echo "... shaderprogram.s"
+	@echo "... uniform.o"
+	@echo "... uniform.i"
+	@echo "... uniform.s"
 .PHONY : help
 
 

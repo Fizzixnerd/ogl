@@ -46,7 +46,9 @@ namespace ogl {
     void use() const noexcept;
     operator bool() const noexcept;
     const std::string& infolog() const noexcept;
-    Uniform1f get_uniform_location(const std::string& name) const noexcept;
+    template<class T>
+    Uniform<T> get_uniform(const std::string& name);
+    GLuint handle();
   };
   
   class ShaderProgramCreationException : public std::runtime_error {
