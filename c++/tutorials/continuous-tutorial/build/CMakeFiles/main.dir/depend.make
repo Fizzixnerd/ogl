@@ -27,8 +27,6 @@ CMakeFiles/main.dir/matrix.cpp.o: ../matrix.tpp
 CMakeFiles/main.dir/matrix.cpp.o: ../matrix1.tpp
 CMakeFiles/main.dir/matrix.cpp.o: ../vector.hpp
 
-CMakeFiles/main.dir/scratch.cpp.o: ../scratch.cpp
-
 CMakeFiles/main.dir/shader.cpp.o: ../make_unique.tpp
 CMakeFiles/main.dir/shader.cpp.o: ../shader.cpp
 CMakeFiles/main.dir/shader.cpp.o: ../shader.hpp

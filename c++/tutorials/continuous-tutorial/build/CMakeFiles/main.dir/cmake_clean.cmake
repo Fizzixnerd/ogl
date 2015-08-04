@@ -1,6 +1,5 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/main.dir/main.cpp.o"
-  "CMakeFiles/main.dir/scratch.cpp.o"
   "CMakeFiles/main.dir/shader.cpp.o"
   "CMakeFiles/main.dir/shaderprogram.cpp.o"
   "CMakeFiles/main.dir/context.cpp.o"

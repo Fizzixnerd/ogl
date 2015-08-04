@@ -16,7 +16,6 @@ namespace ogl {
   class Uniform {
     T m_value;
     GLint m_handle;
-    void update();
 
   public:
 
@@ -30,6 +29,7 @@ namespace ogl {
     const T& view() const;
     T& value();
     auto operator [](std::size_t i) -> decltype(m_value[i]);
+    void update();
   };
 }
 

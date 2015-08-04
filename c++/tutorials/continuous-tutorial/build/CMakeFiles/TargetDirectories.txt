@@ -1,1 +1,2 @@
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/main.dir
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/main.dir
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/scratch.dir

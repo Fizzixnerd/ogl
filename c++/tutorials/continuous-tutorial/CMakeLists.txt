@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
-add_executable(main main.cpp scratch.cpp shader.cpp shaderprogram.cpp context.cpp uniform.cpp matrix.cpp)
+add_executable(main main.cpp shader.cpp shaderprogram.cpp context.cpp uniform.cpp matrix.cpp)
+add_executable(scratch scratch.cpp)
 
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)

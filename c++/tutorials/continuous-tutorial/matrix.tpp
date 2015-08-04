@@ -219,7 +219,7 @@ namespace ogl {
   }
 
   template<class T, std::size_t N, std::size_t M>
-  std::ostream& operator <<(std::ostream& os, const Matrix<T, N, M>& m) {
+  std::ostream& operator <<(std::ostream& os, Matrix<T, N, M>& m) {
     for (std::size_t i = 0; i < N; ++i) {
       os << "[";
       for (std::size_t j = 0; j < M; ++j) {

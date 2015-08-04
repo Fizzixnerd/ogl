@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial
+CMAKE_SOURCE_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build
+CMAKE_BINARY_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,6 +113,19 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named scratch
+
+# Build rule for target.
+scratch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 scratch
+.PHONY : scratch
+
+# fast build rule for target.
+scratch/fast:
+	$(MAKE) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/build
+.PHONY : scratch/fast
 
 context.o: context.cpp.o
 .PHONY : context.o
@@ -191,7 +204,7 @@ scratch.o: scratch.cpp.o
 
 # target to build an object file
 scratch.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scratch.cpp.o
+	$(MAKE) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/scratch.cpp.o
 .PHONY : scratch.cpp.o
 
 scratch.i: scratch.cpp.i
@@ -199,7 +212,7 @@ scratch.i: scratch.cpp.i
 
 # target to preprocess a source file
 scratch.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scratch.cpp.i
+	$(MAKE) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/scratch.cpp.i
 .PHONY : scratch.cpp.i
 
 scratch.s: scratch.cpp.s
@@ -207,7 +220,7 @@ scratch.s: scratch.cpp.s
 
 # target to generate assembly for a file
 scratch.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scratch.cpp.s
+	$(MAKE) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/scratch.cpp.s
 .PHONY : scratch.cpp.s
 
 shader.o: shader.cpp.o
@@ -291,6 +304,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... rebuild_cache"
+	@echo "... scratch"
 	@echo "... context.o"
 	@echo "... context.i"
 	@echo "... context.s"

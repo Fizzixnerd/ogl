@@ -92,7 +92,7 @@ namespace ogl {
 				       const Matrix<T, N, M>& adder);
 
   template<class T, std::size_t N, std::size_t M>
-  std::ostream& operator <<(std::ostream& os, const Matrix<T, N, M>& m);
+  std::ostream& operator <<(std::ostream& os, Matrix<T, N, M>& m);
 }
 
 #include "matrix.tpp"

@@ -42,17 +42,17 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial
+CMAKE_SOURCE_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial
+CMAKE_BINARY_DIR = /home/matt/src/opengl/c++/tutorials/continuous-tutorial
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@echo "Running CMake cache editor..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
 	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
@@ -62,7 +62,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@echo "Running CMake to regenerate build system..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles /home/matt/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/matt/src/opengl/c++/tutorials/continuous-tutorial/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -114,126 +114,6 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-context.o: context.cpp.o
-.PHONY : context.o
-
-# target to build an object file
-context.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.o
-.PHONY : context.cpp.o
-
-context.i: context.cpp.i
-.PHONY : context.i
-
-# target to preprocess a source file
-context.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.i
-.PHONY : context.cpp.i
-
-context.s: context.cpp.s
-.PHONY : context.s
-
-# target to generate assembly for a file
-context.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/context.cpp.s
-.PHONY : context.cpp.s
-
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-scratch.o: scratch.cpp.o
-.PHONY : scratch.o
-
-# target to build an object file
-scratch.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scratch.cpp.o
-.PHONY : scratch.cpp.o
-
-scratch.i: scratch.cpp.i
-.PHONY : scratch.i
-
-# target to preprocess a source file
-scratch.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scratch.cpp.i
-.PHONY : scratch.cpp.i
-
-scratch.s: scratch.cpp.s
-.PHONY : scratch.s
-
-# target to generate assembly for a file
-scratch.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/scratch.cpp.s
-.PHONY : scratch.cpp.s
-
-shader.o: shader.cpp.o
-.PHONY : shader.o
-
-# target to build an object file
-shader.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shader.cpp.o
-.PHONY : shader.cpp.o
-
-shader.i: shader.cpp.i
-.PHONY : shader.i
-
-# target to preprocess a source file
-shader.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shader.cpp.i
-.PHONY : shader.cpp.i
-
-shader.s: shader.cpp.s
-.PHONY : shader.s
-
-# target to generate assembly for a file
-shader.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shader.cpp.s
-.PHONY : shader.cpp.s
-
-shaderprogram.o: shaderprogram.cpp.o
-.PHONY : shaderprogram.o
-
-# target to build an object file
-shaderprogram.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shaderprogram.cpp.o
-.PHONY : shaderprogram.cpp.o
-
-shaderprogram.i: shaderprogram.cpp.i
-.PHONY : shaderprogram.i
-
-# target to preprocess a source file
-shaderprogram.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shaderprogram.cpp.i
-.PHONY : shaderprogram.cpp.i
-
-shaderprogram.s: shaderprogram.cpp.s
-.PHONY : shaderprogram.s
-
-# target to generate assembly for a file
-shaderprogram.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/shaderprogram.cpp.s
-.PHONY : shaderprogram.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -243,21 +123,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... rebuild_cache"
-	@echo "... context.o"
-	@echo "... context.i"
-	@echo "... context.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... scratch.o"
-	@echo "... scratch.i"
-	@echo "... scratch.s"
-	@echo "... shader.o"
-	@echo "... shader.i"
-	@echo "... shader.s"
-	@echo "... shaderprogram.o"
-	@echo "... shaderprogram.i"
-	@echo "... shaderprogram.s"
 .PHONY : help
 
 

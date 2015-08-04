@@ -1,0 +1,1 @@
+clang++-3.6   -Wall -std=c++11    CMakeFiles/scratch.dir/scratch.cpp.o  -o scratch -rdynamic 

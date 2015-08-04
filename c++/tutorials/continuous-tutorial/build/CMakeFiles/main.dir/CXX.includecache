@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/attribute.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/attribute.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -14,7 +14,7 @@ GLFW/glfw3.h
 string
 -
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -22,13 +22,13 @@ GLFW/glfw3.h
 cstdlib
 -
 buffer.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/buffer.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.tpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/buffer.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.tpp
 buffer.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/context.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -38,7 +38,7 @@ functional
 string
 -
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/main.cpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/main.cpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -47,34 +47,32 @@ cmath
 -
 cstdio
 -
-iostream
--
 cassert
 -
+array
+-
+iostream
+-
 vector.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 matrix.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
 shader.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 context.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/context.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/context.hpp
 buffer.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/buffer.hpp
 uniform.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
 attribute.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/attribute.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/attribute.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 memory
 -
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.cpp
-matrix.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
-
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
 cstdlib
 -
 array
@@ -82,13 +80,13 @@ array
 iostream
 -
 vector.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 matrix.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.tpp
 matrix1.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix1.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix1.tpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.tpp
 cstdlib
 -
 array
@@ -96,17 +94,17 @@ array
 iostream
 -
 matrix.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix1.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix1.tpp
 array
 -
 cstdlib
 -
 matrix.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 GL/glew.h
 -
 GL/freeglut.h
@@ -122,15 +120,15 @@ vector
 memory
 -
 make_unique.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 uniform.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
 shader.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
 shaderprogram.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.tpp
 exception
 -
 string
@@ -140,31 +138,21 @@ fstream
 sstream
 -
 shader.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 shaderprogram.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shaderprogram.tpp
 memory
 -
 shader.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/shader.hpp
 make_unique.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/make_unique.tpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.cpp
-GL/glew.h
--
-GLFW/glfw3.h
--
-uniform.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
-vector.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
-
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -172,21 +160,21 @@ GLFW/glfw3.h
 string
 -
 uniform.tpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.tpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.tpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.tpp
 GL/glew.h
 -
 GLFW/glfw3.h
 -
 uniform.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/uniform.hpp
 
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/vector.hpp
 array
 -
 cstdlib
 -
 matrix.hpp
-/home/matt/ssd2/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
+/home/matt/src/opengl/c++/tutorials/continuous-tutorial/matrix.hpp
 
