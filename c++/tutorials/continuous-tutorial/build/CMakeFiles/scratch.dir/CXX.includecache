@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/matt/src/opengl/c++/tutorials/continuous-tutorial/scratch.cpp
+/home/matt/src/ogl/c++/tutorials/continuous-tutorial/scratch.cpp
 cstdlib
 -
 array
