@@ -20,12 +20,14 @@ CMakeFiles/main.dir/main.cpp.o: ../shaderprogram.tpp
 CMakeFiles/main.dir/main.cpp.o: ../uniform.hpp
 CMakeFiles/main.dir/main.cpp.o: ../uniform.tpp
 CMakeFiles/main.dir/main.cpp.o: ../vector.hpp
+CMakeFiles/main.dir/main.cpp.o: ../vector.tpp
 
 CMakeFiles/main.dir/matrix.cpp.o: ../matrix.cpp
 CMakeFiles/main.dir/matrix.cpp.o: ../matrix.hpp
 CMakeFiles/main.dir/matrix.cpp.o: ../matrix.tpp
 CMakeFiles/main.dir/matrix.cpp.o: ../matrix1.tpp
 CMakeFiles/main.dir/matrix.cpp.o: ../vector.hpp
+CMakeFiles/main.dir/matrix.cpp.o: ../vector.tpp
 
 CMakeFiles/main.dir/shader.cpp.o: ../make_unique.tpp
 CMakeFiles/main.dir/shader.cpp.o: ../shader.cpp
@@ -52,4 +54,5 @@ CMakeFiles/main.dir/uniform.cpp.o: ../uniform.cpp
 CMakeFiles/main.dir/uniform.cpp.o: ../uniform.hpp
 CMakeFiles/main.dir/uniform.cpp.o: ../uniform.tpp
 CMakeFiles/main.dir/uniform.cpp.o: ../vector.hpp
+CMakeFiles/main.dir/uniform.cpp.o: ../vector.tpp
 

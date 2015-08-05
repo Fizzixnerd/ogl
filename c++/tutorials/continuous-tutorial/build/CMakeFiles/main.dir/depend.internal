@@ -21,12 +21,14 @@ CMakeFiles/main.dir/main.cpp.o
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/uniform.hpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/uniform.tpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.hpp
+ /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.tpp
 CMakeFiles/main.dir/matrix.cpp.o
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/matrix.cpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/matrix.hpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/matrix.tpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/matrix1.tpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.hpp
+ /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.tpp
 CMakeFiles/main.dir/shader.cpp.o
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/make_unique.tpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/shader.cpp
@@ -53,3 +55,4 @@ CMakeFiles/main.dir/uniform.cpp.o
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/uniform.hpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/uniform.tpp
  /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.hpp
+ /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.tpp

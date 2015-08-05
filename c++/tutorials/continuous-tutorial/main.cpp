@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cassert>
 
+#include <memory>
 #include <array>
 #include <iostream>
 
@@ -16,9 +17,10 @@
 #include "uniform.hpp"
 #include "attribute.hpp"
 
-/** This function renders the scene properly and is overall a good
-    thing to be having yes yes. */
-
+/**
+   Check the Shader and if it's in a good state print "good!" to
+   stderr, else print "bad!!" to stderr and then the infolog.
+ */
 template<GLenum ShaderType>
 void check_shader(ogl::Shader<ShaderType>& s) {
   if (s) {
@@ -29,6 +31,10 @@ void check_shader(ogl::Shader<ShaderType>& s) {
   }
 }
 
+/**
+   Check the ShaderProgram and if it's in a good state print "good!"
+   to stderr, else print "bad!!" to stderr and then the infolog.
+*/
 void check_program(std::unique_ptr<ogl::ShaderProgram>& sp) {
   if (sp && *sp) {
     std::cerr << "good!" << std::endl;
@@ -46,7 +52,7 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  auto context = Context(1024, 768, "Tutorial 05", nullptr, nullptr);
+  auto context = Context(1024, 768, "Tutorial 09", nullptr, nullptr);
   if (!context) {
     return 3;
   }
@@ -58,7 +64,7 @@ int main(int argc, char** argv) {
     return 2;
   }
 
-  glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+  glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
   auto vertex_buffer = Buffer<GL_ARRAY_BUFFER, GL_STATIC_DRAW>();
   // float vertices[3][3] = {{0.0f}};
@@ -77,13 +83,12 @@ int main(int argc, char** argv) {
   // }
   // std::cout << std::endl;
 
-  Vector3f vertices[3];
-  
+  std::array<Vector3f, 3> vertices;
   vertices[0] = make_vector(-1.0f, -1.0f, 0.0f);
   vertices[1] = make_vector(1.0f, -1.0f, 0.0f);
   vertices[2] = make_vector(0.0f, 1.0f, 0.0f);
 
-  vertex_buffer.buffer(sizeof(vertices), vertices);
+  vertex_buffer.buffer(vertices);
 
   auto vertex_shader = Shader<GL_VERTEX_SHADER>("shader.vs");
   auto fragment_shader = Shader<GL_FRAGMENT_SHADER>("shader.fs");

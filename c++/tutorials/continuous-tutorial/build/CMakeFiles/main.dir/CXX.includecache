@@ -21,6 +21,10 @@ GLFW/glfw3.h
 -
 cstdlib
 -
+array
+-
+vector.hpp
+/home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.hpp
 buffer.tpp
 /home/matt/src/ogl/c++/tutorials/continuous-tutorial/buffer.tpp
 
@@ -43,8 +47,6 @@ GL/glew.h
 -
 GLFW/glfw3.h
 -
-functional
--
 string
 -
 
@@ -58,6 +60,8 @@ cmath
 cstdio
 -
 cassert
+-
+memory
 -
 array
 -
@@ -209,10 +213,18 @@ uniform.hpp
 /home/matt/src/ogl/c++/tutorials/continuous-tutorial/uniform.hpp
 
 /home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.hpp
+memory
+-
 array
 -
 cstdlib
 -
+vector.tpp
+/home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.tpp
 matrix.hpp
 /home/matt/src/ogl/c++/tutorials/continuous-tutorial/matrix.hpp
+
+/home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.tpp
+vector.hpp
+/home/matt/src/ogl/c++/tutorials/continuous-tutorial/vector.hpp
 

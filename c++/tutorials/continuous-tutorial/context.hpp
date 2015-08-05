@@ -3,18 +3,17 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include <functional>
 #include <string>
 
 namespace ogl {
 
   /** An OpenGL Context object representing the current context.  A
-      simple wrapper around glut. */
+      simple wrapper around glfw3. */
   class Context {
     GLFWwindow* m_window;
 
   public:
-    
+
     Context(int width,
 	    int height,
 	    const std::string& title,
