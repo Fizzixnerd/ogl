@@ -17,11 +17,15 @@ namespace ogl {
   template<GLenum ShaderType> class Shader;
   class ShaderProgram;
 
+  /** 
+      An OpenGL class representing a Shader Program.  Usses RAII to
+      manage its resources.
+   */
   class ShaderProgram {
     template<GLenum ShaderType>
     friend class Shader;
-    template<class T> friend
-    std::unique_ptr<T> mem::make_unique();
+    template<class T, class... Args> friend
+    std::unique_ptr<T> mem::make_unique(Args... args);
     template<GLenum... ShaderTypes> friend
     std::unique_ptr<ShaderProgram> make_shaderprogram(Shader<ShaderTypes>&... shaders);
     template<GLenum ShaderType, GLenum... ShaderTypes> friend
@@ -42,6 +46,7 @@ namespace ogl {
 
   public:
     ShaderProgram();
+    ShaderProgram(ShaderProgram& sp) = delete;
     ~ShaderProgram() noexcept;
     void use() const noexcept;
     operator bool() const noexcept;
@@ -57,6 +62,16 @@ namespace ogl {
     virtual const char * what() const noexcept override;
   };
   
+  // FIXME: Add a move constructor
+  //
+  // FIXME: Fix the RAII so that the ShaderProgram keeps a list of all
+  // attached shaders and detaches them once it compiles.  This would
+  // be better.
+  /**
+     An OpenGL class representing a Shader of a particular type.
+     Valid types are GL_VERTEX_SHADER, GL_FRAMENT_SHADER, or
+     GL_GEOMETRY_SHADER.  Uses RAII to manage its resources.
+   */
   template<GLenum ShaderType>
   class Shader {
     friend class ShaderProgram;

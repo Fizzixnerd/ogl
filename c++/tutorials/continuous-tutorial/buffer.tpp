@@ -33,16 +33,16 @@ namespace ogl {
 
   template<GLenum BufferType, GLenum UsageType>
   template<class T, std::size_t N>
-  void Buffer<BufferType, UsageType>::buffer(std::array<T, N>& data) {
+  void Buffer<BufferType, UsageType>::buffer(const std::array<T, N>& data) {
     bind();
-    glBufferData(BufferType, N * sizeof(T), data, UsageType);
+    glBufferData(BufferType, N * sizeof(T), data.data(), UsageType);
   }
 
   template<GLenum BufferType, GLenum UsageType>
   template<class T, std::size_t N>
-  void Buffer<BufferType, UsageType>::buffer(Vector<T, N>& data) {
+  void Buffer<BufferType, UsageType>::buffer(const Vector<T, N>& data) {
     bind();
-    glBufferData(BufferType, N * sizeof(T), data, UsageType);
+    glBufferData(BufferType, N * sizeof(T), data.data(), UsageType);
   }
 
   template<GLenum BufferType, GLenum UsageType>

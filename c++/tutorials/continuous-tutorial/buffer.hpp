@@ -11,6 +11,10 @@
 
 namespace ogl {
 
+  /**
+     An OpenGL Buffer object.  BufferType should be one of the valid
+     GL_*_BUFFER types, and UsageType should be a GL_*_DRAW type.
+   */
   template<GLenum BufferType, GLenum UsageType>
   class Buffer {
     /**
@@ -35,13 +39,17 @@ namespace ogl {
        Buffer the array.
     */
     template<class T, std::size_t N>
-    void buffer(std::array<T, N>& data);
+    void buffer(const std::array<T, N>& data);
 
     /**
        Buffer the Vector.
     */
     template<class T, std::size_t N>
-    void buffer(Vector<T, N>& data);
+    void buffer(const Vector<T, N>& data);
+
+    /**
+       Return the OpenGL handle for the buffer.
+     */
     GLuint handle();
 
     /**

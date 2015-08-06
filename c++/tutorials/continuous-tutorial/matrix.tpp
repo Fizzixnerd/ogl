@@ -58,6 +58,11 @@ namespace ogl {
   }
 
   template<class T, std::size_t N, std::size_t M>
+  T* Matrix<T, N, M>::data() {
+    return m_elements.data()->data();
+  }
+
+  template<class T, std::size_t N, std::size_t M>
   Matrix<T, N, M> operator +(const Matrix<T, N, M>& lhs, const Matrix<T, N, M>& rhs) {
     std::array<std::array<T, M>, N> new_elements;
     for (std::size_t i = 0; i < N; ++i) {

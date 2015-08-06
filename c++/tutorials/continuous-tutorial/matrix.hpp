@@ -8,6 +8,10 @@
 
 namespace ogl {
 
+  /**
+     A mathematical Matrix NxM object with elements of type T along
+     with all the overloads you would expect.
+   */
   template<class T, std::size_t N, std::size_t M>
   class Matrix {
     std::array<std::array<T, M>, N> m_elements;
@@ -21,8 +25,17 @@ namespace ogl {
     Matrix<T, N, M>& operator =(const Matrix<T, N, M>& m);
     Matrix<T, N, M>& operator =(Matrix<T, N, M>&& m);
     std::array<T, M>& operator [](std::size_t i);
+
+    /**
+       Return a pointer to the first element of the Matrix.
+     */
+    T* data();
   };
 
+  /**
+   A partial Matrix specialization with implicit conversions for the
+   single-element case, making them equivalent to scalars.
+  */
   template<class T>
   class Matrix<T, 1, 1> {
     std::array<std::array<T, 1>, 1> m_elements;
@@ -36,8 +49,6 @@ namespace ogl {
     Matrix<T, 1, 1>& operator =(Matrix<T, 1, 1>&& m);
     std::array<T, 1>& operator [](std::size_t i);
 
-    // implicit conversions for single-element matrices making them
-    // equivalent to scalars.
     Matrix(const T& t);
     operator T();
   };
@@ -81,15 +92,24 @@ namespace ogl {
   template<class T, std::size_t N, std::size_t M>
   Matrix<T, N, M>& operator /=(Matrix<T, N, M>& lhs, T rhs);
 
+  /**
+     Efficiently multiply lhs and rhs, and add adder and return the
+     result.  This traverses the matrices only once.
+   */
   template<class T, std::size_t N, std::size_t M, std::size_t L>
   Matrix<T, N, M> multiply_add(const Matrix<T, N, L>& lhs,
 			       const Matrix<T, L, M>& rhs,
 			       const Matrix<T, N, M>& adder);
 
-  template<class T, std::size_t N, std::size_t M, std::size_t L>
-  Matrix<T, N, M>& multiply_add_assign(const Matrix<T, N, L>& lhs,
-				       Matrix<T, L, M>& rhs,
-				       const Matrix<T, N, M>& adder);
+  /**
+     Efficiently assign to the Matrix rhs the result of
+     left-multiplication by lhs and addition by adder.  This traverses
+     the matrices only once.
+   */
+  template<class T, std::size_t N>
+  Matrix<T, N, N>& multiply_add_assign(const Matrix<T, N, N>& lhs,
+				       Matrix<T, N, N>& rhs,
+				       const Matrix<T, N, N>& adder);
 
   template<class T, std::size_t N, std::size_t M>
   std::ostream& operator <<(std::ostream& os, Matrix<T, N, M>& m);

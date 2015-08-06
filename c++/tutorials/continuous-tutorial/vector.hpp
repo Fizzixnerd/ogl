@@ -26,6 +26,12 @@ namespace ogl {
   using Vector2i = Vector<int, 2>;
   using Vector1i = Vector<int, 1>;
 
+  using Vector4ui = Vector<unsigned int, 4>;
+  using Vector3ui = Vector<unsigned int, 3>;
+  using Vector2ui = Vector<unsigned int, 2>;
+  using Vector1ui = Vector<unsigned int, 1>;
+
+  // TODO: Delete this.
   template<class T>
   std::array<T, 1> make_singleton_array(T t);
 

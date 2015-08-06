@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  auto context = Context(1024, 768, "Tutorial 09", nullptr, nullptr);
+  auto context = Context(1024, 768, "Tutorial 10", nullptr, nullptr);
   if (!context) {
     return 3;
   }
@@ -67,28 +67,24 @@ int main(int argc, char** argv) {
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
   auto vertex_buffer = Buffer<GL_ARRAY_BUFFER, GL_STATIC_DRAW>();
-  // float vertices[3][3] = {{0.0f}};
-  // vertices[0][0] = -1.0f;
-  // vertices[0][1] = -1.0f;
-  // vertices[1][0] = 1.0f;
-  // vertices[1][1] = -1.0f;
-  // vertices[2][1] = 1.0f;
+  auto index_buffer = Buffer<GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW>();
+
+
+  std::array<Vector3f, 4> vertices;
+  vertices[0] = make_vector(-1.0f, -1.0f, 0.0f);
+  vertices[1] = make_vector(0.0f, -1.0f, 1.0f);
+  vertices[2] = make_vector(1.0f, -1.0f, 0.0f);
+  vertices[3] = make_vector(0.0f, 1.0f, 0.0f);
   
 
-  // for (auto i = 0; i < 3; ++i) {
-  //   for (auto j = 0; j < 3; ++j) {
-  //     std::cout << vertices[i][j] << " ";
-  //   }
-  //   std::cout << std::endl;
-  // }
-  // std::cout << std::endl;
-
-  std::array<Vector3f, 3> vertices;
-  vertices[0] = make_vector(-1.0f, -1.0f, 0.0f);
-  vertices[1] = make_vector(1.0f, -1.0f, 0.0f);
-  vertices[2] = make_vector(0.0f, 1.0f, 0.0f);
+  std::array<Vector3ui, 4> indices;
+  indices[0] = make_vector(0u, 3u, 1u);
+  indices[1] = make_vector(1u, 3u, 2u);
+  indices[2] = make_vector(2u, 3u, 0u);
+  indices[3] = make_vector(0u, 1u, 2u);
 
   vertex_buffer.buffer(vertices);
+  index_buffer.buffer(indices);
 
   auto vertex_shader = Shader<GL_VERTEX_SHADER>("shader.vs");
   auto fragment_shader = Shader<GL_FRAGMENT_SHADER>("shader.fs");
@@ -118,15 +114,21 @@ int main(int argc, char** argv) {
 
     gScale += 0.001f * time_scale;
 
-    new_gWorld[0][3] = std::sin(gScale);
+    new_gWorld[2][0] = std::sin(gScale);
+    new_gWorld[0][0] = std::cos(gScale);
+    new_gWorld[0][2] = -std::sin(gScale);
+    new_gWorld[2][2] = std::cos(gScale);
 
     auto gworld_mat = Matrix<float, 4, 4>(new_gWorld);
     gWorld = gworld_mat;
 
-    vertex_buffer.bind();
+
+
     glEnableVertexAttribArray(0);
+    vertex_buffer.bind();
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    index_buffer.bind();
+    glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, nullptr);
     glDisableVertexAttribArray(0);
 
     context.swap_buffers();

@@ -3,8 +3,8 @@
 #include <memory>
 
 namespace mem {
-  template<class T>
-  std::unique_ptr<T> make_unique() {
-    return std::unique_ptr<T>(new T());
+  template<class T, class... Args>
+  std::unique_ptr<T> make_unique(Args... args) {
+    return std::unique_ptr<T>(new T(std::forward(args)...));
   }
 }
